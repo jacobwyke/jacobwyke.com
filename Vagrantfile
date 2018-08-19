@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = 'ubuntu/bionic64'
 
     #network location
-    config.vm.network :public_network, ip: '10.0.0.204']
+    config.vm.network :public_network, ip: '10.0.0.204'
     config.vm.network :private_network, ip: '10.0.1.204'
 
     #hostname
