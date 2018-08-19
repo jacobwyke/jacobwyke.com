@@ -1,0 +1,14 @@
+# Site settings
+name:
+description:
+
+baseurl: ""
+twitter_username: jacobwyke
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title/
+
+plugins:
+  - jekyll-sitemap

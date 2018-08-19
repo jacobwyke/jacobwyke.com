@@ -1,0 +1,16 @@
+---
+layout: null
+---
+/* TEAM */                 
+    Name: Jacob Wyke 
+    Site: https://jacobwyke.com
+    Twitter: @jacobwyke
+    Github: @jacobwyke
+    Instagram: @jacobwyke
+    Location: Manchester, UK
+    
+/* SITE */
+    Last Update: 
+    Language: English
+    Doctype: HTML
+    Tools: Jekyll, Webpack, AWS (S3, CloudFront, Route53)
