@@ -9,11 +9,11 @@
     "scripts": {
         "version": "webpack --version",
         "dev": "concurrently \"npm run dev:jekyll\" \"npm run dev:webpack\"",
-        "dev:jekyll": "jekyll build -s src/www/ -d build/_jekyll --watch --force_polling",
+        "dev:jekyll": "bundle exec jekyll build -s src/www/ -d build/_jekyll --watch --force_polling",
         "dev:webpack": "NODE_ENV=development webpack --watch",
         "test": "npm run test:lint",
         "test:lint": "eslint --ignore-pattern=build/ .",
-        "jekyll": "jekyll build -s src/www/ -d build/_jekyll",
+        "jekyll": "bundle exec jekyll build -s src/www/ -d build/_jekyll",
         "build": "npm run build:dev",
         "build:dev": "npm run jekyll; NODE_ENV=development webpack",
         "build:prod": "npm run jekyll; NODE_ENV=production webpack -p",
