@@ -6,6 +6,8 @@ node_js:
 cache:
     directories:
         - "node_modules"
+        - "vendor"
+        - ".bundle"
 
 branches:
     only:
@@ -17,7 +19,7 @@ before_install:
 
 install:
     - npm install
-    - bundle update listen
+    - bundle install --path vendor/bundle
 
 script:
     - npm run test
