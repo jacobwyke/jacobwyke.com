@@ -12,7 +12,7 @@
         "dev:jekyll": "bundle exec jekyll build -s src/www/ -d build/_jekyll --watch --force_polling",
         "dev:webpack": "NODE_ENV=development webpack --watch",
         "test": "npm run test:lint",
-        "test:lint": "eslint --ignore-pattern=build/ .",
+        "test:lint": "eslint src/",
         "jekyll": "bundle exec jekyll build -s src/www/ -d build/_jekyll",
         "build": "npm run build:dev",
         "build:dev": "npm run jekyll; NODE_ENV=development webpack",
