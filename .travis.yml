@@ -14,7 +14,6 @@ branches:
 before_install:
     - npm i -g npm@latest
     - gem install bundler
-    - chmod +x terraform_install.sh
 
 install:
     - npm install
