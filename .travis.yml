@@ -5,7 +5,11 @@ node_js:
 
 cache:
     directories:
-      - "node_modules"
+        - "node_modules"
+
+branches:
+    only:
+        - master
 
 before_install:
     - npm i -g npm@latest
@@ -13,7 +17,7 @@ before_install:
 
 install:
     - npm install
-    - bundle install --path vendor/bundle
+    - bundle install --path vendor/bundle --full-index
 
 script:
     - npm run test
