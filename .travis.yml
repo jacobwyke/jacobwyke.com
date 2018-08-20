@@ -24,3 +24,6 @@ script:
 
 after_success:
     - npm run build:prod
+    - ls -al
+    - ls -al build
+    - ls -al build/www
