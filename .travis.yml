@@ -35,4 +35,17 @@ before_deploy:
     - terraform --version
 
 deploy:
+    provider: s3
+    access_key_id: env AWS_ACCESS_KEY
+    secret_access_key: env AWS_SECRET_KEY
+    bucket: "jacobwyke-com"
+    local_dir: build/www
     skip_cleanup: true
+    on:
+        branch: master
+
+
+env:
+    global:
+        - secure: "Q8+KO6nWasZFVOaHIUlVUmHVsnj797msukz0A7mAY7HWMCkPkU9I8Y44Al+O/7ZkhfsNHCTeCyMA2IE1fTOKhczR88BlkRUdGhNm86XglOlO3SvlC1RX73yFmTo20R6wgf7Js1p5qv6QhJ+FbmUKEskRrr8DRRV3VG2/jpI1KpzMTDG3XWC3rO1xAGeE39H60+7jI0a8OGlcuvM0CH+UiAECp4B3nWnTmmnqz68hM8jzt3/zjYMmQerhEIrL+gDe/kai0M5hqydrF93NF2e7CX8Pj8m+jgYdOcI9TDg31NFEVBgGbyYU7gEnfYo+3eLjwEebfnsT52I5BGPF/E3Yac7+8XIG5gCQzZ7OtnF2Lpxa+OEzCAeHa6V7Lec8wFpdVQblcyXsNx29R6SmPsI+VkvEz9y8RXdjHGD/AWEt63cv/detBkzWQxGPR5XfQ12KktL4FHVUz0lJSJzD2M432kcwzq/GitBdWSzWmmkbCSmjnSk2080wxXBZ9xurLmVhkQDKAlgd/Edz5oezDAy7vY0PA5VMTsxEN+3bm89OH23eCXnNWxTTSQ5/10lIC1ClkasubetzZdjxOQElZARaJnwkIOOgnH+TLaf02NtxNf63NOVRx2ruOjPiQodVsOZFIBLPFlGmqN720jnLhCeRIr3G9lAbtfnsMWUp5Llxhzw="
+        - secure: "o7gIDwhnqMQldHLRj9w5sZEEXw8MFqGcBmMW7sP3vFjt4G5Hxp6jwArKUOgPGfn9lycPExnyJkKIeJHR66XblTnBYHO1FlytaBLtTdMcKF8FrN15SdpTNLYHjvwnhl8urQJjhrf12QUuqSv/Wi4buTqtnFbNV2u6CXSTUZj6oBG5HcqZ8Xy2PCnANo09IOg3WekvIQk/D8Z+6Bvx2PTfXbbalVTJo/Upp6KZz0Ecfz43vJzzOQCLREg2AobvKGpd3ghHJwO0P+DVUQl1VDHkBl4BiPjjxI079BmPMPeGg8a84eKdQP4PZ9j5fCG2OTk28LNM3DZrWxYkgzt5nx0bTq3WsFqtBTQk6Qm+YSY7O0Bke1dZHFEcLyBqP0T6Qh4gPDuhuWwQEMQ8203kMh4XNTVAwDzOn+MkFHOVo2cTkGzmbt1MnJrYjzjVYJ39EYsGQuVLDgY+UcgWBpCr3EjYGOLNLVn14aYV0Gbvf7w1pBX2O/6l0K0KcgqUNBTYh4sLd3eeKuxdodn0xswmLMgLBECW2MshNXLAFDGlTFhQy09KYICSwSqOjqBo553PAxudy12emmd46nW01EM92NIuha1hHnru68mad/y0aJEFj9LpqSds2iCf2lIm3Jhu7ee6Bv4SKHQh/1MqF+GRg/f7u/foaDREBMEw3xyUlnnXz98="
