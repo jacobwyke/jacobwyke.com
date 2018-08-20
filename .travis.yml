@@ -9,10 +9,6 @@ cache:
         - "vendor"
         - ".bundle"
 
-branches:
-    only:
-        - master
-
 before_install:
     - npm i -g npm@latest
     - gem install bundler
@@ -35,15 +31,22 @@ before_deploy:
     - terraform --version
 
 deploy:
-    provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: "jacobwyke-com"
-    local_dir: build/www
-    skip_cleanup: true
-    on:
-        branch: master
-
+    - provider: s3
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
+        bucket: "jacobwyke-com"
+        local_dir: build/www
+        skip_cleanup: true
+        on:
+            branch: master
+    - provider: s3
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
+        bucket: "assets-jacobwyke-com"
+        local_dir: build/assets
+        skip_cleanup: true
+        on:
+            branch: master
 
 env:
     global:
