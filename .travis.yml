@@ -28,7 +28,7 @@ before_deploy:
     - sudo unzip -o terraform.zip -d /opt/terraform
     - sudo ln -sfn /opt/terraform/terraform /usr/bin/terraform
     - rm -f terraform.zip
-    - sudo apt install -y s3cmd
+    - sudo apt-get install -y s3cmd
 
 deploy:
     - provider: script
