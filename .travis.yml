@@ -28,25 +28,14 @@ before_deploy:
     - sudo unzip -o terraform.zip -d /opt/terraform
     - sudo ln -sfn /opt/terraform/terraform /usr/bin/terraform
     - rm -f terraform.zip
-    - terraform --version
+    - sudo apt install -y s3cmd
 
 deploy:
-    - provider: s3
-      access_key_id: $AWS_ACCESS_KEY
-      secret_access_key: $AWS_SECRET_KEY
-      bucket: "jacobwyke-com"
-      local_dir: build/www
-      skip_cleanup: true
+    - provider: script
+      script: bash deploy.sh
       on:
           branch: master
-    - provider: s3
-      access_key_id: $AWS_ACCESS_KEY
-      secret_access_key: $AWS_SECRET_KEY
-      bucket: "assets-jacobwyke-com"
-      local_dir: build/assets
-      skip_cleanup: true
-      on:
-          branch: master
+
 
 env:
     global:

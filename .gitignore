@@ -6,3 +6,4 @@ vendor
 !.babelrc
 !.eslintrc
 !.travis.yml
+!.s3cfg
