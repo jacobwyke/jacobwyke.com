@@ -15,6 +15,7 @@ before_install:
     - npm i -g npm@latest
     - gem install bundler
     - chmod +x terraform_install.sh
+    - apt install unzip
 
 install:
     - npm install
