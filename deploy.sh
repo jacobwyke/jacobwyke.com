@@ -1,6 +1,6 @@
 #/bin/bash
 
-s3cmd
+s3cmd --config=.s3cfg
 
 s3cmd sync build/assets/ s3://assets-jacobwyke-com --no-preserve --add-header='Cache-Control:public, max-age=31536000' --cf-invalidate --config=.s3cfg --access_key=$AWS_ACCESS_KEY --secret_key=$AWS_SECRET_KEY
 
