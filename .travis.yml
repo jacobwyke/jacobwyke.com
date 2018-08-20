@@ -14,6 +14,8 @@ before_install:
     - gem install bundler
 
 install:
+    - sudo apt-get update
+    - sudo apt-get install -y s3cmd
     - npm install
     - bundle install --path vendor/bundle
 
@@ -23,12 +25,11 @@ script:
 after_success:
     - npm run build:prod
 
-before_deploy:
-    - curl -fSL "https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip" -o terraform.zip
-    - sudo unzip -o terraform.zip -d /opt/terraform
-    - sudo ln -sfn /opt/terraform/terraform /usr/bin/terraform
-    - rm -f terraform.zip
-    - sudo apt-get install -y s3cmd
+#before_deploy:
+#    - curl -fSL "https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip" -o terraform.zip
+#    - sudo unzip -o terraform.zip -d /opt/terraform
+#    - sudo ln -sfn /opt/terraform/terraform /usr/bin/terraform
+#    - rm -f terraform.zip
 
 deploy:
     - provider: script
