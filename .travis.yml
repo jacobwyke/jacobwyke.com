@@ -17,7 +17,7 @@ before_install:
 
 install:
     - npm install
-    - bundle install --path vendor/bundle --full-index
+    - bundle update listen
 
 script:
     - npm run test
