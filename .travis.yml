@@ -16,7 +16,7 @@ cache:
 before_install:
     - npm i -g npm@latest
     - gem install bundler
-    - sudo echo "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" > /etc/apt/sources.list
+    - sudo su | echo "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" >> /etc/apt/sources.list
 
 install:
     - sudo apt-get update
