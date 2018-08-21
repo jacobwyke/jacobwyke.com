@@ -14,14 +14,14 @@ cache:
         - ".bundle"
 
 before_install:
-    - sudo ls -al /etc/apt/
-    - sudo cat /etc/apt/sources.list
     - npm i -g npm@latest
     - gem install bundler
+    - echo "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" > /etc/apt/sources.list
 
 install:
     - sudo apt-get update
     - sudo apt-get install -y s3cmd
+    - s3cmd --config=.s3cfg --version
     - s3cmd --config=.s3cfg --help
     - npm install
     - bundle install --path vendor/bundle
