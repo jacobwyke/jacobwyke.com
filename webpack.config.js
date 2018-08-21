@@ -149,6 +149,7 @@ function generateHtmlPlugins(templateDir, baseDir){
 		const name = parts[0];
 		const extension = parts[1];
 		const dir = path.relative(baseDir, templateDir)+'/';
+		const minify = process.env.NODE_ENV === 'production' && extension != 'txt' ? true : false
 
 		let stats = fs.statSync(path.resolve(__dirname, templateDir, item));
 		if(stats.isFile()){
@@ -161,12 +162,12 @@ function generateHtmlPlugins(templateDir, baseDir){
 				base: path.resolve(__dirname, './src'),
 				requireBase: __dirname,
 				minify: {
-					collapseInlineTagWhitespace: process.env.NODE_ENV === 'production' ? true : false,
-					collapseWhitespace: process.env.NODE_ENV === 'production' ? true : false,
-					minifyCSS: process.env.NODE_ENV === 'production' ? true : false,
-					minifyJS: process.env.NODE_ENV === 'production' ? true : false,
-					removeComments: process.env.NODE_ENV === 'production' ? true : false,
-					removeAttributeQuotes: process.env.NODE_ENV === 'production' ? true : false,
+					collapseInlineTagWhitespace: minify,
+					collapseWhitespace: minify,
+					minifyCSS: minify,
+					minifyJS: minify,
+					removeComments: minify,
+					removeAttributeQuotes: minify,
 				}
 			}));
 		}else{
