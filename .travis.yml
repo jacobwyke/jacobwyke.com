@@ -1,6 +1,6 @@
 os: linux
 
-dist: xenial
+dist: bionic
 
 language: node_js
 
@@ -14,6 +14,8 @@ cache:
         - ".bundle"
 
 before_install:
+    - sudo ls -al /etc/apt/
+    - sudo cat /etc/apt/sources.list
     - npm i -g npm@latest
     - gem install bundler
 
