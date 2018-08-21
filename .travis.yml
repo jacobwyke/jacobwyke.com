@@ -2,6 +2,8 @@ os: linux
 
 dist: bionic
 
+sudo: required
+
 language: node_js
 
 node_js:
@@ -16,7 +18,7 @@ cache:
 before_install:
     - npm i -g npm@latest
     - gem install bundler
-    - sudo su | echo "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" >> /etc/apt/sources.list
+    - sudo add-apt-repository "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe"
 
 install:
     - sudo apt-get update
