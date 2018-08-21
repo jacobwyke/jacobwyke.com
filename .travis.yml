@@ -18,13 +18,8 @@ cache:
 before_install:
     - npm i -g npm@latest
     - gem install bundler
-    - sudo add-apt-repository "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe"
 
 install:
-    - sudo apt-get update
-    - sudo apt-get install -y s3cmd
-    - s3cmd --config=.s3cfg --version
-    - s3cmd --config=.s3cfg --help
     - npm install
     - bundle install --path vendor/bundle
 
