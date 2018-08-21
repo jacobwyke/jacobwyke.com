@@ -6,11 +6,12 @@ layout: null
     Site: https://jacobwyke.com
     Twitter: @jacobwyke
     Github: @jacobwyke
-    Instagram: @jacobwyke
     Location: Manchester, UK
     
 /* SITE */
     Last Update: 
     Language: English
     Doctype: HTML
-    Tools: Jekyll, Webpack, AWS (S3, CloudFront, Route53)
+    Tools: Travis CI, Jekyll, Webpack, AWS (S3, CloudFront, Route53)
+    Git: https://github.com/jacobwyke/jacobwyke.git
+    
