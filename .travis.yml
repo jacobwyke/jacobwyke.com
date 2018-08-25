@@ -19,7 +19,8 @@ before_install:
 
 install:
     - sudo apt-get update
-    - sudo apt-get install -y s3cmd
+    - sudo apt-get install -y puthon-pip
+    - sudo pip install s3cmd
     - s3cmd --config=.s3cfg --version
     - s3cmd --config=.s3cfg --help
     - npm install
