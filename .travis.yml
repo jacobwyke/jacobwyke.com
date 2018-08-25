@@ -21,8 +21,7 @@ install:
     - sudo apt-get update
     - sudo apt-get install -y python-pip
     - sudo pip install s3cmd
-    - s3cmd --config=.s3cfg --version
-    - s3cmd --config=.s3cfg --help
+    # - s3cmd --config=.s3cfg --help
     - npm install
     - bundle install --path vendor/bundle
 
