@@ -1,0 +1,37 @@
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:url" content="<%= htmlWebpackPlugin.options.domain %>{{ page.url | replace:'index.html',''}}"/>
+<meta property="og:title" content=
+    {% if page.og-title %}
+        "{{ page.og-title }}"
+    {% elsif page.title %}
+        "{{ page.title }}"
+    {% else %}
+        "{{ site.title_without_name }}"
+    {% endif %}
+/>
+<meta property="og:description" content=
+    {% if page.og-description %}
+        "{{ page.og-description }}"
+    {% elsif page.excerpt %}
+        "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"
+    {% else %}
+        "{{ site.description }}"
+    {% endif %}
+/>
+<meta property="og:image" content=
+    {% if page.og-image %}
+        "{{ page.og-image }}"
+    {% else %}
+        "<%= htmlWebpackPlugin.options.assetsDomain %>/images/opengraph.png"
+    {% endif %}
+/>
+<meta property="og:image:alt" content=
+    {% if page.og-image-alt %}
+        "{{ page.og-image-alt }}"
+    {% elsif page.excerpt %}
+        "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"
+    {% else %}
+        "{{ site.description }}"
+    {% endif %}
+/>

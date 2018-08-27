@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    {% include head/default.html %}
+    <body>
+        <div id="container">
+			<div id="progress"></div>
+			<header id="header">
+				<div id="logo">
+					<a href="/">JW</a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="">Home</a></li>
+						<li><a href="">Writing</a></li>
+						<li><a href="">Projects</a></li>
+						<li><a href="">Reading</a></li>
+						<li><a href="">Trips</a></li>
+						<li><a href="">Now</a></li>
+						<li><a href="">Resume</a></li>
+						<li><a href="">About</a></li>
+					</ul>
+				</nav>
+				<div class="title">
+					<h1>This is the current page title</h1>
+				</div>
+			</header>
+
+			<div class="content">
+            	{{ content }}
+			</div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@jacobwyke"/>
+<meta name="twitter:creator" content="@jacobwyke"/>
+<meta name="twitter:title" content=
+    {% if page.twitter-title %}
+        "{{ page.twitter-title }}"
+    {% elsif page.title %}
+        "{{ page.title }}"
+    {% else %}
+        "{{ site.title_without_name }}"
+    {% endif %}
+/>
+<meta name="twitter:description" content=
+    {% if page.twitter-description %}
+        "{{ page.twitter-description }}"
+    {% elsif page.excerpt %}
+        "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"
+    {% else %}
+        "{{ site.description }}"
+    {% endif %}
+/>
+<meta name="twitter:image" content=
+    {% if page.twitter-image %}
+        "{{ page.twitter-image }}"
+    {% else %}
+        "<%= htmlWebpackPlugin.options.assetsDomain %>/images/opengraph.png"
+    {% endif %}
+/>
+<meta name="twitter:image:alt" content=
+    {% if page.twitter-image-alt %}
+        "{{ page.twitter-image-alt }}"
+    {% elsif page.excerpt %}
+        "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"
+    {% else %}
+        "{{ site.description }}"
+    {% endif %}
+/>
+
+{% if page.twitter-label and page.twitter-data %}
+    <meta name="twitter:label1" value="{{ page.twitter-label }}" />
+    <meta name="twitter:data1" value="{{ page.twitter-data }}" />
+{% endif %}
+{% if page.twitter-label2 and page.twitter-data2 %}
+    <meta name="twitter:label1" value="{{ page.twitter-label2 }}" />
+    <meta name="twitter:data1" value="{{ page.twitter-data2 }}" />
+{% endif %}

@@ -14,7 +14,7 @@ const webpackConfig = {
 	output: {
 		filename: process.env.NODE_ENV === 'production' ? 'assets/js/[hash:8].js' : 'assets/js/script.js',
 		path: path.resolve(__dirname, './build'),
-		publicPath: process.env.NODE_ENV === 'production' ? 'https://assets.jacobwyke.com/' : 'https://assets.dev.jacobwyke.com/'
+		publicPath: process.env.NODE_ENV === 'production' ? 'https://assets.jacobwyke.com/' : 'http://assets.dev.jacobwyke.com/'
 	},
 	resolve: {
 		alias: {
@@ -157,8 +157,8 @@ function generateHtmlPlugins(templateDir, baseDir){
 				filename: `www/${dir}${name}.${extension}`,
 				template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
 				inject: false,
-				domain: process.env.NODE_ENV === 'production' ? 'https://jacobwyke.com' : 'https://dev.jacobwyke.com',
-				assetsDomain: process.env.NODE_ENV === 'production' ? 'https://assets.jacobwyke.com' : 'https://assets.dev.jacobwyke.com',
+				domain: process.env.NODE_ENV === 'production' ? 'https://jacobwyke.com' : 'http://dev.jacobwyke.com',
+				assetsDomain: process.env.NODE_ENV === 'production' ? 'https://assets.jacobwyke.com' : 'http://assets.dev.jacobwyke.com',
 				base: path.resolve(__dirname, './src'),
 				requireBase: __dirname,
 				minify: {
