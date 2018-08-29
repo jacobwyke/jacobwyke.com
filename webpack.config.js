@@ -9,10 +9,10 @@ const fs = require('fs');
 
 const webpackConfig = {
 	entry: {
-		app: './src/main.js'
+		app: './src/assets/js/main.js'
 	},
 	output: {
-		filename: process.env.NODE_ENV === 'production' ? 'assets/js/[hash:8].js' : 'assets/js/script.js',
+		filename: process.env.NODE_ENV === 'production' ? 'assets/js/[hash:8].js' : 'assets/js/main.js',
 		path: path.resolve(__dirname, './build'),
 		publicPath: process.env.NODE_ENV === 'production' ? 'https://assets.jacobwyke.com/' : 'http://assets.dev.jacobwyke.com/'
 	},

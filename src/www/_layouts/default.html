@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
     {% include head/default.html %}
+
     <body>
         <div id="container">
 			<div id="progress"></div>
@@ -10,17 +12,17 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="">Home</a></li>
-						<li><a href="">Writing</a></li>
-						<li><a href="">Projects</a></li>
-						<li><a href="">Reading</a></li>
-						<li><a href="">Trips</a></li>
-						<li><a href="">Now</a></li>
-						<li><a href="">Resume</a></li>
-						<li><a href="">About</a></li>
+						<li class="home"><a href="/">Home</a></li>
+						<li><a href="/writing/">Writing</a></li>
+						<li><a href="/projects/">Projects</a></li>
+						<li><a href="/reading/">Reading</a></li>
+						<li><a href="/trips/">Trips</a></li>
+						<li><a href="/now/">Now</a></li>
+						<li><a href="/resume/">Résumé</a></li>
+						<li><a href="/about/">About</a></li>
 					</ul>
 				</nav>
-				<div class="title">
+				<div class="title" id="masthead-title">
 					<h1>This is the current page title</h1>
 				</div>
 			</header>
@@ -30,5 +32,8 @@
 			</div>
 
         </div>
+
+        {% include scripts/default.html %}
+
     </body>
 </html>

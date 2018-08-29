@@ -1,0 +1,9 @@
+<script>
+    (function(){
+        a = document.createElement('script');
+        b = document.getElementsByTagName('title')[0];
+        a.async=1;
+        a.src='<%= htmlWebpackPlugin.files.chunks['app'].entry %>'; 
+        b.parentNode.insertBefore(a,b);
+    })();
+</script>
