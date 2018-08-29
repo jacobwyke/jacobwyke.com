@@ -2,7 +2,9 @@
 import '../css/screen.css';
 
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = () => {
+	scrollFunction();
+};
 
 
 
@@ -32,22 +34,22 @@ function scrollFunction() {
 	}
 
 	//if below title show title in masthead
-	//if(numScrollPosition > numHeadingPosition){
+	if(numScrollPosition > numHeadingPosition){
 	//	document.getElementById('masthead-title').style.display = 'inline-block';
-	//}else{
+	}else{
 	//	document.getElementById('masthead-title').style.display = 'none';
-	//}
+	}
 
 	//if below title hide masthead
-	//if(numScrollPosition > numCutOff){
+	if(numScrollPosition > numCutOff){
 	//	document.getElementById('header').className = '';
-	//}else{
+	}else{
 	//	document.getElementById('header').className = 'masthead';
-	//}
+	}
 
 	//if scrolled up and below the cut off show the header
-	//if(numScrollPosition < numOldPosition){
+	if(numScrollPosition < numOldPosition){
 	//	document.getElementById('header').className = 'masthead';
-	//}
+	}
 
 }
